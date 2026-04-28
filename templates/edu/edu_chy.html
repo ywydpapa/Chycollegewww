@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% include '/comm/header.html' %}
+<style>
+    /* 본문 컨테이너 (따뜻한 베이지 배경) */
+    .info-container {
+        background-color: #fdf8f4;
+        padding: 4rem 2rem;
+        border-radius: 8px;
+        color: #333;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    /* 메인 타이틀 */
+    .main-title {
+        color: #5a3d2b; /* 진한 브라운 */
+        font-weight: 700;
+        font-size: 2.2rem;
+        font-family: 'Gungsuh', '궁서', serif;
+    }
+
+    /* 서브 타이틀 (공동운영) */
+    .sub-title {
+        color: #7b4a2b;
+        font-weight: 700;
+        font-size: 1.4rem;
+        font-family: 'Gungsuh', '궁서', serif;
+        margin-top: 0.5rem;
+    }
+
+    /* 타이틀 아래 굵은 선 */
+    .title-hr {
+        border-top: 2px solid #5a3d2b;
+        width: 60%;
+        margin: 1.5rem auto 3rem;
+        opacity: 1;
+    }
+
+    /* 하단 정보 텍스트 영역 */
+    .info-text-wrap {
+        max-width: 750px; /* 텍스트가 너무 넓게 퍼지지 않도록 가운데 정렬용 최대 너비 설정 */
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    /* 본문 섹션 제목 (■ 교육목적 등) */
+    .section-heading {
+        color: #2b4c7e; /* 네이비 톤 */
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    /* 본문 일반 텍스트 */
+    .section-text {
+        color: #333;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        word-break: keep-all;
+    }
+
+    /* 정보 섹션 제목 (1. 자격종목... 2. 자격관리...) */
+    .info-heading {
+        color: #2b4c7e;
+        font-weight: 700;
+        font-size: 1.15rem;
+        margin-bottom: 12px;
+    }
+
+    /* 정보 리스트 (가, 나, 다...) */
+    .info-list {
+        list-style: none;
+        padding-left: 0;
+        color: #4a5568;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .info-container { padding: 2rem 1rem; }
+        .main-title { font-size: 1.8rem; }
+        .sub-title { font-size: 1.2rem; }
+        .title-hr { width: 90%; }
+    }
+</style>
+<body>
+    <div class="container mt-2 mb-5">
+        <!-- 상단 로그인 및 헤더 -->
+        <div class="d-flex justify-content-end mb-3 top-bar">
+            <a href="#" class="text-dark text-decoration-none d-flex align-items-center"><i class="bi bi-person-circle fs-5 me-1"></i> 로그인</a>
+        </div>
+        {% include '/comm/topmenu.html' %}
+
+        <!-- 내용 영역 시작 -->
+        <div class="info-container">
+
+            <!-- 상단 타이틀 영역 -->
+            <div class="text-center">
+                <div class="main-title">(사)충효예대학 충효예 교육사 과정</div>
+                <div class="sub-title">[(사)국제청소년문화재단과 공동운영]</div>
+                <hr class="title-hr">
+            </div>
+
+            <!-- 하단 텍스트 정보 영역 -->
+            <div class="info-text-wrap">
+
+                <!-- 교육목적 -->
+                <div class="mb-4">
+                    <h4 class="section-heading">■ 교육목적</h4>
+                    <p class="section-text">
+                        국민의식 개혁을 통한 나라사랑, 부산사랑, 부모사랑, 이웃사랑을 통한 도덕성 회복으로 국의를 선양하고 굳건한 국가 발전과 밝은 가정 사회의 질서를 이룩하고 청소년에게 충효예의 정신고취를 목적으로 함
+                    </p>
+                </div>
+
+                <!-- 지원자격 -->
+                <div class="mb-4">
+                    <h4 class="section-heading">■ 지원자격</h4>
+                    <p class="section-text">
+                        충효예 실천과 인성교육지도에 관심 있는 충효예대학 후원 이사에 한함
+                    </p>
+                </div>
+
+                <!-- 특전 -->
+                <div class="mb-4">
+                    <h4 class="section-heading">■ 특전</h4>
+                    <ul class="section-text" style="list-style: none; padding-left: 0;">
+                        <li>1. 충효예교육사 1급 · 2급 자격증 취득가능</li>
+                        <li>2. 우수 수료생 학교 및 군부대 사회단체 강사 추천</li>
+                        <li>3. 충효예 교육에 필요한 자료 제공</li>
+                        <li style="color: #666; margin-top: 5px;">※ 강의 전과정 YouTube 생방송 및 녹화방송으로 복습가능</li>
+                    </ul>
+                </div>
+
+                <!-- 주최 -->
+                <div class="mb-5">
+                    <h4 class="section-heading">■ 주최</h4>
+                    <p class="section-text">
+                        사단법인 충효예실천본부, 충효예 대학, 사단법인 국제청소년문화재단, 희망복지영남방송(주)
+                    </p>
+                </div>
+
+                <!-- 하단 자격 정보 (기존 스타일 활용) -->
+                <div class="mt-5 pt-4" style="border-top: 1px solid #dcdcdc;">
+                    <!-- 1. 자격종목 정보 안내 -->
+                    <div class="mb-4">
+                        <h5 class="info-heading">1. 자격종목 정보 안내</h5>
+                        <ul class="info-list">
+                            <li>가. 자격증명 : 충효예 교육사</li>
+                            <li>나. 자격종류 : 등록(비공인) 민간자격</li>
+                            <li>다. 등록번호 : 2021-000710호</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. 자격관리기관 정보 -->
+                    <div>
+                        <h5 class="info-heading">2. 자격관리기관 정보</h5>
+                        <ul class="info-list">
+                            <li>가. 기관명 : 사단법인 충효예대학</li>
+                            <li>나. 대표자 : 류진수</li>
+                            <li>다. 연락처 : Tel. 051-638-9911~2 (Fax. 051-638-9915)</li>
+                            <li>라. 소재지 : 부산광역시 동구 조방로 14 713호(범일동, 동일타워)</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 내용 영역 끝 -->
+
+    </div>
+
+    {% include '/comm/footer.html' %}
+    <!-- 모달 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

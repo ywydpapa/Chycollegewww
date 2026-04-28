@@ -1,0 +1,118 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사단법인 충효예대학</title>
+    <link rel="icon" href="/static/favicon/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+    /* ================= 전역 스타일 (배경색 통일 및 푸터 하단 고정) ================= */
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* 화면 전체 높이를 최소 높이로 설정하여 푸터를 하단으로 밉니다 */
+        background-color: #fdf8f4; /* 모든 페이지 배경색을 따뜻한 베이지로 통일 */
+        color: #333;
+    }
+
+    /* ================= 헤더 및 네비게이션 ================= */
+    .top-bar { font-size: 0.9rem; }
+
+    .custom-nav {
+        display: flex;
+        background-color: #8b5e34;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        width: 100%;
+    }
+    .custom-nav > li {
+        border-right: 1px solid #a67c52;
+        position: relative;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .custom-nav > li:last-child { border-right: none; }
+    .custom-nav > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 15px 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background-color 0.3s;
+    }
+    .custom-nav > li > a:hover { background-color: #a67c52; }
+    .nav-main-item > a { border-radius: 8px 0 0 8px; }
+    .custom-nav > li:last-child > a { border-radius: 0 8px 8px 0; }
+
+    /* 드롭다운 메뉴 스타일 */
+    .custom-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fdf8f4;
+        min-width: 100%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        border-radius: 0 0 8px 8px;
+        z-index: 1000;
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        border: 1px solid #e8dcc8;
+        border-top: none;
+    }
+    .custom-nav > li:hover .custom-dropdown { display: block; }
+    .custom-dropdown > li { border-bottom: 1px solid #e8dcc8; }
+    .custom-dropdown > li:last-child { border-bottom: none; }
+    .custom-dropdown > li > a {
+        display: block;
+        color: #5a3d2b;
+        text-decoration: none;
+        padding: 12px 15px;
+        font-size: 1rem;
+        text-align: center;
+        white-space: nowrap;
+        transition: background-color 0.2s;
+    }
+    .custom-dropdown > li > a:hover {
+        background-color: #eedcc6;
+        color: #8b5e34;
+    }
+
+    .section-title-wrapper { display: flex; align-items: center; margin: 4rem 0 3rem; }
+    .section-title-line { flex-grow: 1; height: 1px; background-color: #dcdcdc; }
+    .section-title-text { margin: 0 20px; color: #555; font-size: 1.1rem; letter-spacing: 0.5px; }
+
+    /* ================= 푸터 및 기타 ================= */
+    .custom-footer {
+        background-color: #f5efe6; /* 푸터는 본문보다 아주 살짝 더 진한 베이지 */
+        padding: 2rem 0 1.5rem;
+        margin-top: auto; /* body의 flex 설정과 결합되어 항상 맨 아래 고정 */
+        color: #4a3b32;
+        border-top: 1px solid #e8dcc8;
+    }
+    .footer-menu { list-style: none; padding: 0; font-size: 0.85rem; }
+    .footer-menu li { margin-bottom: 0.2rem; }
+    .footer-menu a { color: #5a3d2b; transition: color 0.2s; text-decoration: none; }
+    .footer-menu a:hover { color: #8b5e34; font-weight: bold; }
+    .email-signup-input {
+        border: 1px solid #d4c5b4;
+        background: #ffffff;
+        padding: 6px 12px;
+        width: 100%;
+        max-width: 250px;
+        font-size: 0.85rem;
+        border-radius: 4px;
+        color: #555;
+    }
+</style>
+
+</head>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% include '/comm/header.html' %}
+<style>
+    /* 본문 컨테이너 스타일 (따뜻한 베이지 배경) */
+    .info-container {
+        background-color: #fdf8f4;
+        padding: 4rem 3rem;
+        border-radius: 8px;
+        color: #333;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    
+    /* 메인 타이틀 */
+    .main-title {
+        color: #5a3d2b;
+        font-weight: 700;
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        font-family: 'Gungsuh', '궁서', serif; /* 이미지와 유사한 진중한 느낌 부여 */
+    }
+
+    /* 섹션 타이틀 (01, 02, 03) */
+    .section-title {
+        color: #5a3d2b;
+        font-weight: 700;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        font-family: 'Gungsuh', '궁서', serif;
+    }
+    
+    /* 구분선 스타일 */
+    .custom-hr {
+        border-top: 1px solid #9ba4b5; /* 이미지의 푸른빛 도는 회색 선 */
+        margin: 3rem 0;
+        opacity: 0.5;
+    }
+
+    /* 회훈 내용 스타일 */
+    .motto-text {
+        font-weight: 700;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        padding-left: 2rem;
+    }
+
+    /* 실천강령 리스트 스타일 */
+    .action-list {
+        list-style: none;
+        padding-left: 2rem;
+    }
+    .action-list li {
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        font-weight: 500;
+        word-break: keep-all;
+    }
+
+    /* 테이블 스타일 */
+    .custom-table {
+        background-color: #ffffff;
+        border-color: #dcdcdc;
+        margin-top: 1.5rem;
+    }
+    .custom-table th, .custom-table td {
+        padding: 1.2rem;
+        vertical-align: middle;
+        border-color: #dcdcdc;
+    }
+    .custom-table .col-header {
+        background-color: #f7f7f7;
+        font-weight: 700;
+        text-align: center;
+        width: 20%;
+        color: #333;
+    }
+    
+    /* 모바일 반응형 처리 */
+    @media (max-width: 768px) {
+        .info-container { padding: 2rem 1.5rem; }
+        .main-title { font-size: 1.8rem; }
+        .motto-text, .action-list { padding-left: 0.5rem; }
+        .custom-table .col-header { width: 30%; }
+    }
+</style>
+<body>
+    <div class="container mt-2 mb-5">
+        <!-- 상단 로그인 및 헤더 -->
+        <div class="d-flex justify-content-end mb-3 top-bar">
+            <a href="#" class="text-dark text-decoration-none d-flex align-items-center"><i class="bi bi-person-circle fs-5 me-1"></i> 로그인</a>
+        </div>
+        {% include '/comm/topmenu.html' %}
+        
+        <div class="section-title-wrapper">
+            <div class="section-title-line"></div>
+            <div class="section-title-text"> 사단법인 충효예대학 </div>
+            <div class="section-title-line"></div>
+        </div>
+
+        <!-- 내용 영역 시작 -->
+        <div class="info-container">
+            <!-- 메인 제목 -->
+            <h2 class="main-title">회훈(실천강령) 및 사업안내</h2>
+
+            <!-- 01. 회훈 -->
+            <div class="section-block">
+                <h3 class="section-title">01. 회 훈</h3>
+                <div class="motto-text">
+                    충은 국가안보이고<br>
+                    효는 화합과 통합이며<br>
+                    예는 상식에 기반한 기초질서이다
+                </div>
+            </div>
+
+            <!-- 구분선 -->
+            <hr class="custom-hr">
+
+            <!-- 02. 실천강령 -->
+            <div class="section-block">
+                <h3 class="section-title">02. 실천강령</h3>
+                <ul class="action-list">
+                    <li>1. 우리는 오천년의 유구한 역사와 빛나는 문화민족임을 자긍하며 경애의 도리를 실천한다.</li>
+                    <li>2. 우리는 한민족의 존엄성을 다시 찾아 충효예를 기본으로 하여 전통적인 미풍양속을 계승 발전시킨다.</li>
+                    <li>3. 우리는 한민족의 충효예 기본정신에 위배되는 어떠한 행위도 일체배격한다.</li>
+                </ul>
+            </div>
+
+            <!-- 구분선 -->
+            <hr class="custom-hr">
+
+            <!-- 03. 사업안내 -->
+            <div class="section-block">
+                <h3 class="section-title">03. 사업안내</h3>
+                <div class="table-responsive">
+                    <table class="table table-bordered custom-table mb-0">
+                        <tbody>
+                            <tr>
+                                <td class="col-header">사업안내</td>
+                                <td class="text-center" style="color: #555;">사업 내용</td>
+                            </tr>
+                            <tr>
+                                <td class="col-header">국가사업</td>
+                                <td>
+                                    4대 국경일 행사참여(3.1절, 제헌절(7.17), 광복절(8.15), 개천절(10.3))<br>
+                                    현충일(6.6), 부산 시민의 날, 한글날(10.9)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-header">자체행사</td>
+                                <td>충효예 사관학교, 시민대강연회, 불우이웃돕기, 장학금 지원사업</td>
+                            </tr>
+                            <tr>
+                                <td class="col-header">기타행사</td>
+                                <td>16구·군 각지회행사, 충효예 등산회</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- 내용 영역 끝 -->
+
+    </div>
+    
+    {% include '/comm/footer.html' %}
+    <!-- 모달 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

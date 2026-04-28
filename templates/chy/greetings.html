@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% include '/comm/header.html' %}
+<style>
+    .greeting-container {
+        background-color: #fdf8f4; /* 이미지와 유사한 따뜻한 베이지 배경 */
+        padding: 3rem;
+        border-radius: 8px;
+        color: #2c3e50;
+    }
+    .greeting-title-small {
+        color: #2c3e50;
+        border-bottom: 2px solid #2c3e50;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    .greeting-title-main {
+        color: #5a3d2b;
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .greeting-subtitle {
+        color: #7b4a2b;
+        font-weight: 600;
+        border-bottom: 1px solid #7b4a2b;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 2rem;
+    }
+    .greeting-text p {
+        line-height: 1.8;
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        color: #333;
+        word-break: keep-all;
+    }
+    .greeting-hanja {
+        color: #4a5568;
+        font-size: 0.95rem;
+        margin: 1.5rem 0;
+    }
+    .greeting-hanja p {
+        margin-bottom: 0.2rem;
+    }
+    .greeting-hanja .mb-3 {
+        margin-bottom: 1rem !important;
+    }
+    .signature-area {
+        margin-top: 4rem;
+    }
+</style>
+<body>
+    <div class="container mt-2">
+        <!-- 상단 로그인 및 헤더 -->
+        <div class="d-flex justify-content-end mb-3 top-bar">
+            <a href="#" class="text-dark text-decoration-none d-flex align-items-center"><i class="bi bi-person-circle fs-5 me-1"></i> 로그인</a>
+        </div>
+        {% include '/comm/topmenu.html' %}
+
+        <div class="section-title-wrapper">
+            <div class="section-title-line"></div>
+            <div class="section-title-text"> 사단법인 충효예대학 </div>
+            <div class="section-title-line"></div>
+        </div>
+
+        <!-- 이사장 인사말 본문 영역 -->
+        <div class="greeting-container my-5 shadow-sm">
+            <!-- 상단 제목 -->
+            <div class="text-center mb-4">
+                <div class="greeting-title-small">이사장 인사말</div>
+                <div class="greeting-title-main">(사)충·효·예 대학을 찾아주셔서 감사합니다.</div>
+            </div>
+
+            <!-- 서브 타이틀 -->
+            <div class="text-center">
+                <div class="greeting-subtitle">충·효·예 실천은 제2의 건국운동</div>
+            </div>
+
+            <!-- 내용 영역 (좌측 사진, 우측 텍스트) -->
+            <div class="row mt-4">
+                <!-- 좌측 이사장 사진 -->
+                <div class="col-lg-4 col-md-5 mb-4 mb-md-0">
+                    <img src="/static/images/greetimg.png" alt="이사장 사진" class="img-fluid rounded shadow-sm w-100">
+                </div>
+
+                <!-- 우측 텍스트 내용 -->
+                <div class="col-lg-8 col-md-7 greeting-text">
+                    <p>
+                        사단법인 충효예 대학은 한 민족의 정신문화인 충효예 사상을 바탕으로 효행장려 및 지원에 관한 법률(제 8610호)과 인성 교육 진흥법 (제 13004호)에 의거 대한민국 건국이래 최초로 충효예 대학을 설립하였습니다.
+                    </p>
+                    <p>
+                        법률 제 11722호 자격 기본법 제 17조 2항 및 동 시행령 제 23조 3항에 의거 충효예 교육사 2급 자격 시험에 합격하여 충효예 교육사가 되면 유치원, 초, 중, 고등학교 및 사회단체 복지관 등에서 충효예를 주제로 한 강의를 할 수 있습니다.
+                    </p>
+                    <p>
+                        21세기 정보화시대 4차 산업혁명시대를 맞이하여 인공지능과 빅데이터가 세계를 지배해 왔고, 특히 상상을 초월한 정도로 빠르게 과학문명이 발달하고 있습니다.
+                    </p>
+                    <p>
+                        과학문명의 발달과는 달리 조상 전래의 충효예 사상을 바탕으로 한 정신문화 발달은 동서양을 대표하여 건전한 사회를 만드는데 대한민국이 선두에 서 있다고 자부할 수 있으며 세계인들에게 영원히 사랑과 존경을 받을 수 있는 자랑스런 우리의 정신문화입니다.
+                    </p>
+
+                    <!-- 한자 명언 영역 -->
+                    <div class="greeting-hanja">
+                        <p>子曰學而時習之(자왈학이시습지)하니</p>
+                        <p class="mb-3">不亦說乎(불역열호)아</p>
+
+                        <p>有朋自遠方來(유붕자원방래)하니</p>
+                        <p class="mb-3">不亦樂乎(불역락호)아</p>
+
+                        <p>人不知而不慍(인부지이불온)하니</p>
+                        <p class="mb-3">不亦君子乎(불역군자호)아.</p>
+                    </div>
+
+                    <p style="color: #555;">
+                        공자께서 말씀하시길 "배우고 때에 맞추어 익히니 또한 기쁘지 아니한가!<br>
+                        벗이 먼 곳에서 찾아오니 또한 즐겁지 아니한가!<br>
+                        사람들이 알아주지 않아도 노엽지 아니하니 또한 군자답지 아니한가!" 라고 하셨습니다.
+                    </p>
+
+                    <p>
+                        점점 상실되어가고 있는 인류사회의 인간성을 회복시켜 세계평화에 기여할 역사적인 사명이 우리민족에게 있고 사람의 도리를 다하는 기본적인 사상이 바로 충효예 사상입니다.<br>
+                        충효예 사상을 적극 실천하고 전파하는 일은 대한민국을 바로 세우고 우리 민족의 정신문화를 재정립하는 제2의 건국운동이기에 대한민국을 뛰어 넘어 위기의 지구를 구하는 막중한 책임과 의무가 있으며 그 중심에 충효예 대학이 있다고 생각합니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 하단 서명 및 로고 (수정된 부분) -->
+            <div class="d-flex justify-content-end align-items-center signature-area pe-lg-4">
+                <!-- 서명 텍스트 -->
+                <div class="text-start me-4">
+                    <h5 class="fw-bold mb-2" style="color: #1a365d;">사단법인 충·효·예 대학 이사장</h5>
+                    <h4 class="fw-bold mb-0" style="color: #1a365d; letter-spacing: 5px;">류 진 수</h4>
+                </div>
+                <!-- 직인/로고 이미지 -->
+                <div>
+                    <img src="/static/images/chylogoL.png" alt="충효예대학 로고" class="img-fluid" style="max-width: 120px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include '/comm/footer.html' %}
+    <!-- 모달 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
