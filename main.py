@@ -3,6 +3,10 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import uvicorn
+import os
+from routers import board
+
 
 BASE_DIR = Path(__file__).resolve().parent
 STATIC_DIR = BASE_DIR / "static"
@@ -13,12 +17,14 @@ app = FastAPI(title="CHY College Homepage")
 # 정적 파일(CSS, JS, 이미지 등) 마운트
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+app.include_router(board.router)
+
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name="basic.html",
+        name="index.html",
         context={
             "title": "CHYC - 사단법인 충효예대학",
         },
@@ -116,3 +122,4 @@ async def gallery(request: Request):
             "title": "CHYC - 사단법인 충효예대학",
         },
     )
+

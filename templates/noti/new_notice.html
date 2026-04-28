@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% include '/comm/header.html' %}
+<style>
+    /* 본문 컨테이너 */
+    .info-container {
+        background-color: #fdf8f4;
+        padding: 3rem 2rem;
+        border-radius: 8px;
+        color: #333;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    /* 메인 타이틀 */
+    .main-title {
+        color: #5a3d2b;
+        font-weight: 700;
+        font-size: 2.2rem;
+        font-family: 'Gungsuh', '궁서', serif;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    /* 입력 폼 레이아웃 (테이블 스타일) */
+    .write-form-wrap {
+        background-color: #ffffff;
+        border-top: 2px solid #5a3d2b;
+        border-bottom: 1px solid #5a3d2b;
+    }
+    .form-row {
+        display: flex;
+        border-bottom: 1px solid #e8dcc8;
+    }
+    .form-row:last-child {
+        border-bottom: none;
+    }
+
+    /* 입력 폼 라벨 (제목, 작성자 등) */
+    .form-label-col {
+        background-color: #f5efe6;
+        width: 15%;
+        min-width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: #4a3b32;
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* 입력 폼 영역 */
+    .form-input-col {
+        width: 85%;
+        padding: 12px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* 입력창 디자인 커스텀 */
+    .form-control {
+        border: 1px solid #d4c5b4;
+        border-radius: 4px;
+    }
+    .form-control:focus {
+        border-color: #8b5e34;
+        box-shadow: 0 0 0 0.2rem rgba(139, 94, 52, 0.25);
+    }
+
+    /* 버튼 스타일 */
+    .btn-custom {
+        background-color: #8b5e34;
+        color: #fff;
+        border: none;
+        padding: 10px 30px;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: background-color 0.2s;
+    }
+    .btn-custom:hover {
+        background-color: #6b4624;
+        color: #fff;
+    }
+    .btn-outline-custom {
+        background-color: #fff;
+        color: #5a3d2b;
+        border: 1px solid #5a3d2b;
+        padding: 10px 30px;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: all 0.2s;
+    }
+    .btn-outline-custom:hover {
+        background-color: #f5efe6;
+        color: #5a3d2b;
+    }
+
+    /* 모바일 반응형 처리 */
+    @media (max-width: 768px) {
+        .info-container { padding: 2rem 1rem; }
+        .form-row { flex-direction: column; }
+        .form-label-col {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 10px 15px;
+            border-bottom: 1px solid #e8dcc8;
+        }
+        .form-input-col { width: 100%; }
+    }
+</style>
+<body>
+    <div class="container mt-2 mb-5">
+        <!-- 상단 로그인 및 헤더 -->
+        <div class="d-flex justify-content-end mb-3 top-bar">
+            <a href="#" class="text-dark text-decoration-none d-flex align-items-center"><i class="bi bi-person-circle fs-5 me-1"></i> 로그인</a>
+        </div>
+        {% include '/comm/topmenu.html' %}
+
+        <div class="section-title-wrapper">
+            <div class="section-title-line"></div>
+            <div class="section-title-text"> 사단법인 충효예대학 </div>
+            <div class="section-title-line"></div>
+        </div>
+
+        <!-- 내용 영역 시작 -->
+        <div class="info-container">
+            <h2 class="main-title">자료실 글쓰기</h2>
+
+            <form action="/new_notice" method="POST" enctype="multipart/form-data">
+                <div class="write-form-wrap">
+
+                    <!-- 옵션 (공지사항 체크) -->
+                    <div class="form-row">
+                        <div class="form-label-col">옵션</div>
+                        <div class="form-input-col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="noticeCheck" value="Y" id="noticeCheck" style="border-color: #8b5e34;">
+                                <label class="form-check-label" for="noticeCheck" style="color: #4a3b32; font-weight: 500;">
+                                    공지사항으로 등록
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 제목 -->
+                    <div class="form-row">
+                        <div class="form-label-col">제목</div>
+                        <div class="form-input-col">
+                            <input type="text" class="form-control" name="title" placeholder="제목을 입력하세요" required>
+                        </div>
+                    </div>
+
+                    <!-- 작성자 -->
+                    <div class="form-row">
+                        <div class="form-label-col">작성자</div>
+                        <div class="form-input-col">
+                            <!-- readonly 제거: 작성자 이름도 자유롭게 입력할 수 있도록 변경 -->
+                            <input type="text" class="form-control" name="author" placeholder="작성자명" style="max-width: 200px;" required>
+                        </div>
+                    </div>
+
+                    <!-- 비밀번호 (추가됨) -->
+                    <div class="form-row">
+                        <div class="form-label-col">비밀번호</div>
+                        <div class="form-input-col">
+                            <input type="password" class="form-control" name="password" placeholder="수정/삭제 시 사용할 비밀번호" style="max-width: 200px;" required>
+                            <div class="form-text mt-1" style="font-size: 0.85rem; color: #777;">
+                                * 게시글 수정 및 삭제 시 필요합니다.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 첨부파일 -->
+                    <div class="form-row">
+                        <div class="form-label-col">첨부파일</div>
+                        <div class="form-input-col">
+                            <input class="form-control" type="file" id="formFileMultiple" name="files" multiple>
+                            <div class="form-text mt-2" style="font-size: 0.85rem; color: #777;">
+                                <i class="bi bi-info-circle me-1"></i> 최대 20MB 이하의 파일만 업로드 가능합니다. (Ctrl 키를 누른 상태로 여러 파일 선택 가능)
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 내용 -->
+                    <div class="form-row">
+                        <div class="form-label-col" style="align-items: flex-start; padding-top: 20px;">내용</div>
+                        <div class="form-input-col">
+                            <textarea class="form-control" name="content" rows="15" placeholder="내용을 입력하세요" required></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 하단 버튼 영역 -->
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <button type="button" class="btn btn-outline-custom" onclick="history.back();">취소</button>
+                    <button type="submit" class="btn btn-custom">등록하기</button>
+                </div>
+            </form>
+
+        </div>
+        <!-- 내용 영역 끝 -->
+    </div>
+
+    {% include '/comm/footer.html' %}
+    <!-- 모달 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
